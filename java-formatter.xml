@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+	Java formatter profile for VS Code's Java extension (the Eclipse JDT formatter): point java.format.settings.url
+	at this file. Only settings that differ from Eclipse's built-in defaults are listed, except the three tab
+	settings, which match the defaults but are spelled out because tabs are the point. Some keys are misspelled
+	on purpose: that's how JDT spells them.
+-->
+<profiles version="23">
+<profile kind="CodeFormatterProfile" name="Brendan" version="23">
+	<!-- One tab per indentation level, wrapped lines included. -->
+	<setting id="org.eclipse.jdt.core.formatter.tabulation.char" value="tab"/>
+	<setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
+	<setting id="org.eclipse.jdt.core.formatter.indentation.size" value="4"/>
+	<setting id="org.eclipse.jdt.core.formatter.continuation_indentation" value="1"/>
+	<setting id="org.eclipse.jdt.core.formatter.continuation_indentation_for_array_initializer" value="1"/>
+	<setting id="org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch" value="true"/>
+
+	<!-- Empty bodies on one line. -->
+	<setting id="org.eclipse.jdt.core.formatter.keep_method_body_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_type_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_record_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_record_constructor_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_enum_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_annotation_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_anonymous_type_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_enum_constant_declaration_on_one_line" value="one_line_if_empty"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_code_block_on_one_line" value="one_line_if_empty"/>
+
+	<!--
+		Braces on every if/else/for/while/do body. The formatter can't add a missing one, but it never leaves a braceless
+		body on its if's line (Eclipse's default), so one stands out. A short block may stay on one line as written,
+		if (x) { return y; }, and so may a loop's, a lambda's or a switch case's. Not an else's: JDT always spreads out
+		the blocks of an if that has an else (} else if (y) { ... } is fine, that block is the inner if's).
+	-->
+	<setting id="org.eclipse.jdt.core.formatter.keep_if_then_body_block_on_one_line" value="one_line_preserve"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_loop_body_block_on_one_line" value="one_line_preserve"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_lambda_body_block_on_one_line" value="one_line_preserve"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_switch_body_block_on_one_line" value="one_line_preserve"/>
+
+	<!-- Never take away a line break or blank line put there by hand. -->
+	<setting id="org.eclipse.jdt.core.formatter.join_wrapped_lines" value="false"/>
+	<setting id="org.eclipse.jdt.core.formatter.join_lines_in_comments" value="false"/>
+	<setting id="org.eclipse.jdt.core.formatter.number_of_empty_lines_to_preserve" value="99"/>
+	<setting id="org.eclipse.jdt.core.formatter.keep_switch_case_with_arrow_on_one_line" value="one_line_preserve"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_annotation" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_catch_clause" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_enum_constant_declaration" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_for_statment" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_if_while_statement" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_lambda_declaration" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_method_delcaration" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_method_invocation" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_record_declaration" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_switch_statement" value="preserve_positions"/>
+	<setting id="org.eclipse.jdt.core.formatter.parentheses_positions_in_try_clause" value="preserve_positions"/>
+	<!-- A break is only kept where wrapping is allowed, so allow it ("wrap where necessary") where the default forbids it. -->
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_assignment" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_conditional_expression_chain" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_relational_operator" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_shift_operator" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_expressions_in_for_loop_header" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_method_declaration" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_arguments_in_annotation" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_type_arguments" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_type_parameters" value="16"/>
+	<setting id="org.eclipse.jdt.core.formatter.alignment_for_parameterized_type_references" value="16"/>
+
+	<!-- Lines up to 160 wide (as Prettier is set for TypeScript), comments included; HTML in Javadoc left as written. -->
+	<setting id="org.eclipse.jdt.core.formatter.lineSplit" value="160"/>
+	<setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="160"/>
+	<setting id="org.eclipse.jdt.core.formatter.comment.format_html" value="false"/>
+
+	<!-- A labelled statement starts on the line after its label. -->
+	<setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_label" value="insert"/>
+
+	<!-- Array initializers as {1, 2}, the way the code is written. -->
+	<setting id="org.eclipse.jdt.core.formatter.insert_space_after_opening_brace_in_array_initializer" value="do not insert"/>
+	<setting id="org.eclipse.jdt.core.formatter.insert_space_before_closing_brace_in_array_initializer" value="do not insert"/>
+</profile>
+</profiles>
